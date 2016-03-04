@@ -1,10 +1,10 @@
 from django import forms
-from django.models import UrlField
+from .models import Url
 
 class UrlForm(forms.ModelForm):
 	class Meta:
-		model = UrlField
+		model = Url
 
 		fields = [
-		'field',
+		'actual',
 		]

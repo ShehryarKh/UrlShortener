@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form method = "POST" action = "{% url 'blog:index'%}">
+		{% csrf_token%}
+
+		{{url_form}}
+	<input type="Submit" value="submit">	
+	</form>
+	{% if shortened %}
+	<a href="{% url 'shortlink' short=shortened %}">{{request.get_host}}{% url 'shortlink' short=shortened %}</a>
+	{% endif %}
+</body>
+</html>
